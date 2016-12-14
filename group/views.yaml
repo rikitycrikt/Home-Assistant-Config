@@ -1,0 +1,10 @@
+#default_view:
+#  view: yes
+
+
+inside_weather_view:
+  name: Inside Weather
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.Inside_Weather

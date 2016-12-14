@@ -1,0 +1,63 @@
+homeassistant:
+  name: 'House of Ger'
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize: !include_dir_merge_named customize  
+
+http:
+  api_password: !secret http_password
+  trusted_networks:
+    - 192.168.1.0/24
+    - 127.0.0.1
+
+group: !include_dir_merge_named group
+history:
+conversation:
+logbook:
+updater:
+frontend:
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+climate:
+  platform: nest
+
+
+zwave:
+  usb_path: /dev/ttyUSB0
+  config_path: /usr/local/lib/python3.5/dist-packages/libopenzwave-0.3.1-py3.5-linux-x86_64.egg/config
+
+### MQTT ###
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+  protocol: 3.1
+
+# Example configuration.yaml entry
+device_tracker:
+  platform: owntracks
+  max_gps_accuracy: 200
+
+
+## Zones ##
+zone 2:
+  name: Work
+  latitude: !secret work_latitude
+  longitude: !secret work_longitude
+  radius: 1500
+  icon: mdi:tag
+
+
+### IFTTT / Maker ###
+
+ifttt:
+  key: !secret ifttt_key
+
+sensor: !include_dir_merge_list sensor
+binary_sensor: !include binary_sensor.yaml
