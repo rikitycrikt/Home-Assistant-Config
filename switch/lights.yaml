@@ -1,0 +1,19 @@
+- platform: mqtt
+  name: 'Left Lamp'
+  state_topic: 'smartthings/Left Lamp/switch'
+  command_topic: 'smartthings/Left Lamp/switch'
+  brightness_state_topic: 'smartthings/Left Lamp/level'
+  brightness_command_topic: 'smartthings/Left Lamp/level'
+  payload_on: 'on'
+  payload_off: 'off'
+  retain: true
+- platform: mqtt
+  name: 'Right Lamp'
+  state_topic: 'smartthings/Right Lamp/switch'
+  command_topic: 'smartthings/Right Lamp/switch'
+  brightness_state_topic: 'smartthings/Right Lamp/level'
+  brightness_command_topic: 'smartthings/Right Lamp/level'
+  payload_on: 'on'
+  payload_off: 'off'
+  retain: true
+

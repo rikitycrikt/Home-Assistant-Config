@@ -59,5 +59,7 @@ zone 2:
 ifttt:
   key: !secret ifttt_key
 
+
+switch: !include_dir_merge_list switch
 sensor: !include_dir_merge_list sensor
 binary_sensor: !include binary_sensor.yaml
