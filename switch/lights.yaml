@@ -16,4 +16,19 @@
   payload_on: 'on'
   payload_off: 'off'
   retain: true
-
+- platform: mqtt
+  name: 'Sink Light'
+  state_topic: 'smartthings/Sink/switch'
+  command_topic: 'smartthings/Sink/switch'
+  brightness_state_topic: 'smartthings/Sink/level'
+  brightness_command_topic: 'smartthings/Sink/level'
+  payload_on: 'on'
+  payload_off: 'off'
+  retain: true
+- platform: mqtt
+  name: 'Porch Light'
+  state_topic: 'smartthings/Porch Lights/switch'
+  command_topic: 'smartthings/Porch Lights/switch'
+  payload_on: 'on'
+  payload_off: 'off'
+  retain: true

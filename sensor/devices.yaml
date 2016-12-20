@@ -1,5 +1,0 @@
-- platform: template
-  sensors:
-    nest_upstairs:
-      friendly_name: 'Upstairs Nest'
-      value_template: "{{ 'Online' if is_state('device_tracker.nest_upstairs', 'home') else 'Offline' }}"

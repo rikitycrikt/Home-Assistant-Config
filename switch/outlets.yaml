@@ -1,0 +1,8 @@
+- platform: mqtt
+  name: 'Xmas Tree'
+  state_topic: 'smartthings/Xmas Tree/switch'
+  command_topic: 'smartthings/Xmas Tree/switch'
+  payload_on: 'on'
+  payload_off: 'off'
+  retain: true
+

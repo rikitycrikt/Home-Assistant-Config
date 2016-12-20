@@ -19,6 +19,13 @@ logbook:
 updater:
 frontend:
 
+
+#{"entity_id":"remote.living_room","device":"35168881","command":"Mute"}
+remote:
+  - platform: harmony
+    name: Living Room
+    host: 192.168.1.104
+
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret

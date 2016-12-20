@@ -4,6 +4,10 @@
 #### Thermostat ####
 climate.upstairs:
   friendly_name: 'Nest Upstairs'
+  hidden: true
+sensor.upstairs_thermostat_temperature:
+  friendly_name: 'Upstairs Temp'
+  hidden: false
 sensor.nest_upstairs:
   icon: mdi:air-conditioner  
   hidden: true
@@ -15,7 +19,7 @@ sensor.upstairs_thermostat_target:
   hidden: true
 sensor.upstairs_thermostat_operation_mode:
   friendly_name: 'Nest Mode'
-#  hidden: true
+  hidden: true
 
 
 #### Nest Protect ####
@@ -46,4 +50,13 @@ binary_sensor.upstairs_thermostat_online:
 ##  Sun Section
 ###################################
 sun.sun:
+  hidden: true
+
+
+###################################
+## Motion Sensors
+###################################
+sensor.basement_motion:
+  hidden: true
+sensor.entry_way_motion:
   hidden: true

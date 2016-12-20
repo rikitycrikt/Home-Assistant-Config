@@ -1,0 +1,7 @@
+Media Center:
+  entities:
+    - switch.tv
+    - switch.stereo
+    - switch.antenna
+    - switch.chromecast
+    - switch.roku

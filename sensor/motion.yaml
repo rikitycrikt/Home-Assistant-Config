@@ -1,0 +1,22 @@
+- platform: mqtt
+  state_topic: smartthings/Basement Motion/motion
+  name: 'Basement Motion'
+  retain: true
+- platform: mqtt
+  state_topic: smartthings/Basement Motion/temperature
+  name: 'Basement Temperature'
+  unit_of_measurement: '°F'
+  retain: true
+- platform: mqtt
+  state_topic: smartthings/Entry Way Sensor/motion
+  name: 'Entry Way Motion'
+  retain: true
+- platform: mqtt
+  state_topic: smartthings/Entry Way Sensor/temperature
+  name: 'Entry Way Temperature'
+  unit_of_measurement: '°F'
+  retain: true
+- platform: mqtt
+  state_topic: smartthings/Garage Door/contact
+  name: 'Garage Door'
+  retain: true

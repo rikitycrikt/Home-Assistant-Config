@@ -1,4 +1,4 @@
-Inside Weather:
+Upstairs Weather:
   entities:
     - sensor.upstairs_thermostat_humidity
     - sensor.upstairs_thermostat_temperature
