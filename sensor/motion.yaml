@@ -19,4 +19,5 @@
 - platform: mqtt
   state_topic: smartthings/Garage Door/contact
   name: 'Garage Door'
+  hidden: true
   retain: true

@@ -12,6 +12,7 @@ sensor.nest_upstairs:
   icon: mdi:air-conditioner  
   hidden: true
 sensor.upstairs_thermostat_humidity:  
+  friendly_name: 'Upstairs Humidity'
   icon: mdi:water-percent
 sensor.upstairs_away_mode:
   hidden: true
@@ -59,4 +60,9 @@ sun.sun:
 sensor.basement_motion:
   hidden: true
 sensor.entry_way_motion:
+  hidden: true
+
+
+## Contact Sensors
+sensor.garage_door:
   hidden: true
