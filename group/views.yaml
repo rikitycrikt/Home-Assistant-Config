@@ -9,3 +9,16 @@ Upstairs:
   entities:
     - group.upstairs_weather
     - sensor.upstairs_thermostat_temperature
+    - climate.upstairs_away_mode
+
+Automations:
+  name: Automations
+  view: yes
+  icon: mdi:av-timer
+  entities:
+    - group.all_automations
+    - input_select.home_presence
+    - input_select.home_security
+    - sensor.garage_door
+    - sensor.basement_motion
+    - sensor.entry_way_motion

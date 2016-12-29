@@ -1,0 +1,18 @@
+  home_presence :
+    name: Home Presence
+    options:
+     - Home
+     - Partial
+     - Away
+     - Guest
+    initial: Home
+    icon: mdi:home-map-marker
+  home_security :
+    name: Home Security
+    options:
+      - Disarmed
+      - Armed-Home
+      - Armed-Away
+    initial: Armed-Home
+    icon: mdi:security-home
+

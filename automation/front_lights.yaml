@@ -1,0 +1,25 @@
+- alias: Set Porch Lights
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_select.home_presence
+    - platform: sun
+      event: sunrise
+    - platform: time
+      hours: '/1'
+      minutes: 00
+      seconds: 00
+  action:
+    service_template: > 
+        {%if states.sun.sun.state == 'below_horizon' %} 
+          {%if  states.sensor.time.state > strptime('05:00', '%H:%m') %}
+          switch.turn_on
+          {%elif (states.input_select.home_presence.state == 'away') or (states.input_select.home_presence.state == 'partial')%}
+          switch.turn_on
+          {%elif (states.input_select.home_presence.state == 'home') and (as_timestamp(now()) - as_timestamp(states.automation.set_home_presence.attributes.last_triggered) >=900 ) %}
+          switch.turn_off
+          {%endif%}
+        {%elif states.sun.sun.state == 'above_horizon' %}
+        switch.turn_off
+        {%endif%}
+    entity_id: switch.porch_light

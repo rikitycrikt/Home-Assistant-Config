@@ -1,0 +1,32 @@
+- alias: Set Home Security
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_select.home_presence
+    - platform: state
+      entity_id: sun.sun
+    # Time Triggers 
+    - platform: time
+      hours: /1
+      minutes: 01
+      seconds: 00
+
+  action:
+    service: input_select.select_option
+    entity_id: input_select.home_security
+    data_template: 
+      option: >
+        {%if states.input_select.home_presence.state == 'Guest'%}
+        {%elif states.input_select.home_presence.state == 'Away'%}
+        Armed-Away
+        {% elif (states.input_select.home_presence.state == 'Partial') or (states.input_select.home_presence.state == 'Home') %}
+         {%if states.sun.sun.state == 'below_horizon' %}
+           {% if now().strftime("%H") == '05' %}
+           Disarmed 
+           {% elif now().strftime("%H") == '22' %}
+           Armed-Home
+           {% endif %}
+         {%elif states.sun.sun.state == 'above_horizon' %}
+         Disarmed
+         {% endif %}
+        {% endif %}

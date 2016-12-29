@@ -1,0 +1,5 @@
+automations:
+  entities:
+    - automation.set_home_presence
+    - automation.set_home_security
+    - automation.set_porch_lights

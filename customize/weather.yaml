@@ -51,18 +51,21 @@ binary_sensor.upstairs_thermostat_online:
 ##  Sun Section
 ###################################
 sun.sun:
-  hidden: true
+  hidden: false
 
+
+group.all_devices:
+  hidden: true
 
 ###################################
 ## Motion Sensors
 ###################################
 sensor.basement_motion:
-  hidden: true
+  hidden: false
 sensor.entry_way_motion:
-  hidden: true
+  hidden: false
 
 
 ## Contact Sensors
 sensor.garage_door:
-  hidden: true
+  hidden: false

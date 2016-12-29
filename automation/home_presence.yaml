@@ -1,0 +1,20 @@
+- alias: Set Home Presence
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: device_tracker.ryan_s7, device_tracker.beth_s5
+  action:
+    service: input_select.select_option
+    entity_id: input_select.home_presence
+    data_template: 
+      option: >
+        {%if states.input_select.home_presence.state == 'Guest' %}
+        {%else %}
+          {%-if (states.device_tracker.ryan_s7.state == 'home') and (states.device_tracker.beth_s5.state == 'home')%}
+          Home
+          {%-elif (states.device_tracker.ryan_s7.state == 'home') or (states.device_tracker.beth_s5.state == 'home')%}
+          Partial
+          {%-else %}
+          Away
+          {%- endif %}
+        {%endif %}

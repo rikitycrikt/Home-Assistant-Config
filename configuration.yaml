@@ -2,6 +2,7 @@ homeassistant:
   name: 'House of Ger'
   latitude: !secret home_latitude
   longitude: !secret home_longitude
+#  elevation: 264
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include_dir_merge_named customize  
@@ -11,6 +12,8 @@ http:
   trusted_networks:
     - 192.168.1.0/24
     - 127.0.0.1
+#  ip_ban_enabled: True
+#  login_attempts_threshold: 5
 
 group: !include_dir_merge_named group
 history:
@@ -18,9 +21,8 @@ conversation:
 logbook:
 updater:
 frontend:
+sun:
 
-
-#{"entity_id":"remote.living_room","device":"35168881","command":"Mute"}
 remote:
   - platform: harmony
     name: Living Room
@@ -33,10 +35,9 @@ nest:
 climate:
   platform: nest
 
-
-zwave:
-  usb_path: /dev/ttyUSB0
-  config_path: /usr/local/lib/python3.5/dist-packages/libopenzwave-0.3.1-py3.5-linux-x86_64.egg/config
+#zwave:
+#  usb_path: /dev/ttyUSB0
+#  config_path: /usr/local/lib/python3.5/dist-packages/libopenzwave-0.3.1-py3.5-linux-x86_64.egg/config
 
 ### MQTT ###
 mqtt:
@@ -46,7 +47,7 @@ mqtt:
   keepalive: 60
   protocol: 3.1
 
-# Example configuration.yaml entry
+## Owntracks Device Trackers
 device_tracker:
   platform: owntracks
   max_gps_accuracy: 200
@@ -66,7 +67,9 @@ zone 2:
 ifttt:
   key: !secret ifttt_key
 
-
+automation: !include_dir_merge_list automation
+script: !include_dir_merge_named script
+input_select: !include_dir_merge_named input
 switch: !include_dir_merge_list switch
 sensor: !include_dir_merge_list sensor
 binary_sensor: !include binary_sensor.yaml
